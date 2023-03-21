@@ -12,6 +12,7 @@ export function ContractControls({
   setValue
 }: ContractControlsProps): JSX.Element {
   const {
+    web3,
     account,
     contracts: { simpleStorage }
   } = useEth() as ContextValueReady;
@@ -30,9 +31,13 @@ export function ContractControls({
     setWriting(true);
     const writeMethod = simpleStorage.methods.write(input);
     try {
+      const gas = (await writeMethod.estimateGas()).toString();
+      const { baseFeePerGas } = await web3.eth.getBlock("pending");
+      const maxFeePerGas = (baseFeePerGas! * BigInt(2)).toString();
       await writeMethod.send({
         from: account,
-        gas: (await writeMethod.estimateGas()).toString()
+        gas,
+        maxFeePerGas
       });
     } catch {}
     setInput("");
