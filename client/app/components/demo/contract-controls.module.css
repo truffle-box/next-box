@@ -26,3 +26,10 @@
 .button input {
   width: 5rem;
 }
+
+.button.disabled,
+.button.disabled input {
+  background-color: #666;
+  color: #999;
+  cursor: default;
+}

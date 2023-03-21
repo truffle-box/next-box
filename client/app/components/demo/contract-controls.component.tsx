@@ -16,6 +16,7 @@ export function ContractControls({
     contracts: { simpleStorage }
   } = useEth() as ContextValueReady;
   const [input, setInput] = useState("");
+  const [writing, setWriting] = useState(false);
 
   const read = async () => {
     const value = await simpleStorage.methods.read().call();
@@ -26,13 +27,16 @@ export function ContractControls({
     if ((e.target as HTMLElement).tagName === "INPUT") return;
     if (!input) return alert("Please enter a value to write.");
 
+    setWriting(true);
     const writeMethod = simpleStorage.methods.write(input);
-    await writeMethod.send({
-      from: account,
-      gas: (await writeMethod.estimateGas()).toString()
-    });
-
+    try {
+      await writeMethod.send({
+        from: account,
+        gas: (await writeMethod.estimateGas()).toString()
+      });
+    } catch {}
     setInput("");
+    setWriting(false);
   };
 
   return (
@@ -41,12 +45,16 @@ export function ContractControls({
         read()
       </div>
 
-      <div onClick={write} className={styles.button}>
+      <div
+        onClick={writing ? () => {} : write}
+        className={styles.button + " " + (writing ? styles.disabled : "")}
+      >
         write(
         <input
           type="text"
           placeholder="uint"
           value={input}
+          disabled={writing}
           onChange={e =>
             /^\d+$|^$/.test(e.target.value) && setInput(e.target.value)
           }
