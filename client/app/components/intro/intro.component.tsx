@@ -6,11 +6,11 @@ export function Intro(): JSX.Element {
       <div>
         <div>
           <h1>
-            Welcome to the&nbsp;
-            <Image src="/truffle.svg" alt="Truffle" width={26} height={26} />
+            Welcome to the&nbsp;&nbsp;
+            <Image src="/truffle.svg" alt="Truffle" width={28} height={28} />
             &nbsp;+&nbsp;
-            <Image src="/next.svg" alt="Next.js" width={83} height={20} />
-            &nbsp;Box!
+            <Image src="/next.svg" alt="Next.js" width={100} height={24} />
+            &nbsp;&nbsp;Box!
           </h1>
         </div>
         <p>
