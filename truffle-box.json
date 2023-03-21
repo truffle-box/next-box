@@ -1,0 +1,13 @@
+{
+  "ignore": [".prettierrc.json"],
+  "commands": {
+    "Truffle: Compile": "cd truffle && truffle compile",
+    "Truffle: Test": "cd truffle && truffle test",
+    "Truffle: Migrate": "cd truffle && truffle migrate",
+    "Next.js: Dev server": "cd client && npm run dev",
+    "Next.js: Build": "cd client && npm run build"
+  },
+  "hooks": {
+    "post-unpack": "cd client && npm i"
+  }
+}
