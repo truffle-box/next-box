@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Next.js Truffle box"
+  title: "Next.js Truffle Box"
 };
 
 interface RootLayoutProps {
