@@ -1,0 +1,11 @@
+.value {
+  padding: 0 0.3rem;
+  border-radius: 0.2rem;
+  color: #eee;
+  background-color: #666;
+  transition: background-color 0.2s ease-out;
+}
+
+.value.flash {
+  background-color: #ff1cb0;
+}

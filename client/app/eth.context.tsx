@@ -18,12 +18,12 @@ export enum NotReadyReason {
   WrongChain
 }
 
-interface ContextValueNotReady {
+export interface ContextValueNotReady {
   ready: false;
   notReadyReason: NotReadyReason;
 }
 
-interface ContextValueReady {
+export interface ContextValueReady {
   ready: true;
   web3: Web3;
   account: string;

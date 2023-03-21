@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button,
+.button input {
+  font-family: monospace;
+  background-color: #333;
+  color: #ddd;
+}
+
+.button {
+  width: 80%;
+  padding: 1rem 0;
+  outline: 0.1rem #444 solid;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button input {
+  width: 5rem;
+}

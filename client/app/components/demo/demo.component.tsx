@@ -1,8 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { useEth, NotReadyReason } from "@/eth.context";
+import { Contract } from "./contract.component";
+import { ContractControls } from "./contract-controls.component";
+import styles from "./demo.module.css";
 
 export function Demo(): JSX.Element {
+  const [value, setValue] = useState("?");
+
   const eth = useEth();
   if (!eth.ready) {
     switch (eth.notReadyReason) {
@@ -32,6 +38,11 @@ export function Demo(): JSX.Element {
   return (
     <section>
       <h2>See it in action</h2>
+
+      <div className={styles["contract-container"]}>
+        <Contract value={value} />
+        <ContractControls setValue={setValue} />
+      </div>
 
       <p>
         Try changing&nbsp;
