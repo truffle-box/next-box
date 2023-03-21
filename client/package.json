@@ -8,9 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bufferutil": "^4.0.7",
+    "encoding": "^0.1.13",
     "next": "^13.2.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "utf-8-validate": "^6.0.3",
+    "web3": "alpha"
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
