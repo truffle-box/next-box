@@ -13,11 +13,21 @@ h1 {
   font-size: 2rem;
 }
 
+h1, h2 {
+  color: #eee
+}
+
 p,
 a,
 summary {
   font-size: 1.2rem;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
+}
+
+p span.code {
+  font-family: monospace;
+  font-size: 80%;
+  color: #888;
 }
 
 code {
