@@ -15,7 +15,7 @@ export enum NotReadyReason {
   NoWallet,
   NoArtifact,
   NoAccount,
-  WrongChain
+  WrongNetwork
 }
 
 export interface ContextValueNotReady {
@@ -72,12 +72,12 @@ export function EthProvider({ children }: EthProviderProps): JSX.Element {
     }
     setAccount(account);
 
-    const chainId = (await web3.eth.getChainId()).toString();
+    const networkId = (await web3.eth.net.getId()).toString();
     const simpleStorageArtifact = await simpleStorageArtifactResponse.json();
     const simpleStorageAddress =
-      simpleStorageArtifact.networks[chainId]?.address;
+      simpleStorageArtifact.networks[networkId]?.address;
     if (!simpleStorageAddress)
-      return setNotReadyReason(NotReadyReason.WrongChain);
+      return setNotReadyReason(NotReadyReason.WrongNetwork);
 
     const simpleStorage = new web3.eth.Contract(
       simpleStorageArtifact.abi,

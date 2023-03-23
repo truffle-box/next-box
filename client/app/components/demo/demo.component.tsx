@@ -25,7 +25,7 @@ export function Demo(): JSX.Element {
         );
       case NotReadyReason.NoAccount:
         return <p>⚠️ Wallet not connected.</p>;
-      case NotReadyReason.WrongChain:
+      case NotReadyReason.WrongNetwork:
         return (
           <p>
             ⚠️ MetaMask is not connected to the same network as the one you
