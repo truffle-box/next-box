@@ -12,12 +12,12 @@ Run the `unbox` command using 1 of 2 ways.
 # Install Truffle globally and run `truffle unbox`
 $ npm install -g truffle
 $ truffle unbox next
-```
 
-```sh
 # Alternatively, run `truffle unbox` via npx
 $ npx truffle unbox next
 ```
+
+You can find detailed installation instruction at: [trufflesuite.com/docs/truffle/how-to/install](https://trufflesuite.com/docs/truffle/how-to/install)
 
 Start the Next.js dev server.
 
@@ -30,10 +30,10 @@ From there, follow the instructions on the hosted Next.js app. It will walk you 
 
 ## FAQ
 
-- __How do I use this with Ganache (or any other network)?__
+- **How do I use this with Ganache (or any other network)?**
 
   The Truffle project is set to deploy to Ganache by default. If you'd like to change this, it's as easy as modifying the Truffle config file! Check out [our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). From there, you can run `truffle migrate` pointed at another network, connect MetaMask to use that network, and see the change take place.
 
-- __Where can I find more resources?__
+- **Where can I find more resources?**
 
   This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Next.js](https://nextjs.org). Either one would be a great place to start!
